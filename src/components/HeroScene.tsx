@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, MeshDistortMaterial, Environment } from "@react-three/drei";
+import SilentErrorBoundary from "./SilentErrorBoundary";
 import type { Mesh, Group } from "three";
 
 /* ---------- Floating Camera 3D Model ---------- */
@@ -88,7 +89,12 @@ export default function HeroScene() {
         <directionalLight position={[5, 5, 5]} intensity={0.85} color="#d4af37" />
         <directionalLight position={[-5, 3, 3]} intensity={0.45} color="#f6e7b0" />
         <pointLight position={[0, 0, 4]} intensity={1} color="#b8892d" />
-        <Environment preset="night" />
+        {/* The preset is fetched from a CDN; the scene still looks fine without it. */}
+        <SilentErrorBoundary>
+          <Suspense fallback={null}>
+            <Environment preset="night" />
+          </Suspense>
+        </SilentErrorBoundary>
 
         <CameraModel />
 
