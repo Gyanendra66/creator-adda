@@ -1,7 +1,17 @@
 {
   "name": "creator-adda",
+  "description": "Marketplace connecting India's creative professionals with brands and clients",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Gyanendra Singh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gyanendra66/creator-adda.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import SilentErrorBoundary from "./SilentErrorBoundary";
 import Typewriter from "./Typewriter";
 import AnimatedCounter from "./AnimatedCounter";
 
@@ -115,6 +116,7 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="flex h-[350px] w-full flex-1 items-center justify-center sm:h-[450px] lg:h-[550px]"
         >
+          <SilentErrorBoundary>
           <Suspense
             fallback={
               <div className="flex items-center justify-center">
@@ -124,6 +126,7 @@ export default function Hero() {
           >
             <HeroScene />
           </Suspense>
+          </SilentErrorBoundary>
         </motion.div>
       </div>
 
