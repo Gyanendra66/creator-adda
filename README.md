@@ -5,7 +5,15 @@
 <h1 align="center">Creator Adda</h1>
 
 <p align="center">
-  <strong>India's Premier Marketplace for Creative Professionals</strong>
+  <strong>A marketplace connecting India's creative professionals with brands and clients</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Gyanendra66/creator-adda/actions/workflows/ci.yml"><img src="https://github.com/Gyanendra66/creator-adda/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" alt="React 19" />
+  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white" alt="Vite 7" />
 </p>
 
 <p align="center">
@@ -18,6 +26,11 @@
   <a href="#license">License</a>
 </p>
 
+<p align="center">
+  <img src="docs/screenshot-creators.png" alt="Browse Creators page" width="49%" />
+  <img src="docs/screenshot-jobs.png" alt="Jobs page" width="49%" />
+</p>
+
 ---
 
 ## 🎬 About
@@ -26,12 +39,13 @@
 
 Whether you're a creator looking for your next gig or a brand searching for the perfect creative partner, Creator Adda makes it seamless.
 
-### 📊 Platform Highlights
+### 📌 Project Status
 
-- **12,000+** registered creators
-- **5,000+** completed projects
-- **98%** client satisfaction rate
-- **6** creator categories
+Creator Adda is a working front-end with real authentication and job posting, under active development:
+
+- **Live with Firebase:** sign-up / login (Email, Google, GitHub), account profile and settings, posting and managing jobs
+- **Sample data:** the creator listings, search results, and the numbers shown on the landing and About pages are placeholder content for the UI
+- **Not built yet:** messaging between clients and creators, payments, reviews
 
 ---
 
@@ -40,7 +54,7 @@ Whether you're a creator looking for your next gig or a brand searching for the 
 ### For Creators
 - **Profile & Portfolio** — Showcase your skills, set your rates (starting from ₹800), and display your ratings
 - **Job Discovery** — Browse and apply to posted jobs across creative categories
-- **Real-time Collaboration** — Chat, share files, and track project milestones
+- **Account Dashboard** — Manage your profile, settings, and posted jobs
 
 ### For Clients & Brands
 - **Post Jobs** — Describe your project and find the right creative talent
@@ -49,7 +63,7 @@ Whether you're a creator looking for your next gig or a brand searching for the 
 
 ### Platform Features
 - **🔐 Authentication** — Sign up with Email, Google, or GitHub
-- **🎨 Stunning Dark Theme** — Neon-accented UI with purple, cyan, and orange highlights
+- **🎨 Dark Theme** — Dark UI with gold accents
 - **🎥 3D Interactive Hero** — WebGL-powered floating camera model with mouse tracking
 - **⚡ Blazing Fast** — Code-split routes with lazy loading for optimal performance
 - **📱 Fully Responsive** — Works beautifully on desktop, tablet, and mobile
@@ -79,7 +93,7 @@ Whether you're a creator looking for your next gig or a brand searching for the 
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Node.js](https://nodejs.org/) (v20 or higher)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - A [Firebase](https://firebase.google.com/) project (for authentication & database)
 
@@ -127,6 +141,7 @@ Whether you're a creator looking for your next gig or a brand searching for the 
 
 ```
 creator-adda/
+├── docs/                    # README screenshots
 ├── public/                  # Static assets
 ├── src/
 │   ├── components/          # Reusable UI components
@@ -144,9 +159,9 @@ creator-adda/
 │   │   ├── PageTransition.tsx     # Framer Motion page transitions
 │   │   ├── ScrollProgress.tsx     # Scroll progress indicator
 │   │   ├── ScrollToTop.tsx        # Auto scroll-to-top on navigate
+│   │   ├── SilentErrorBoundary.tsx # Keeps the page up if the 3D scene fails
 │   │   └── Typewriter.tsx         # Typewriter text animation
 │   ├── lib/
-│   │   ├── appStorage.ts         # Local storage utilities
 │   │   └── firebase.ts           # Firebase config, auth & Firestore
 │   ├── pages/                    # Route-level page components
 │   │   ├── HomePage.tsx           # Landing page
@@ -247,14 +262,7 @@ This project is configured for **Firebase Hosting**.
 
 ## 🎨 Creator Categories
 
-| Category | Creators |
-|----------|----------|
-| 🎬 Videographers | 3,200+ |
-| ✂️ Video Editors | 4,100+ |
-| 🖼️ Thumbnail Artists | 1,800+ |
-| ✍️ Scriptwriters | 2,500+ |
-| 🎥 Cinematographers | 900+ |
-| 🎙️ Voiceover Artists | 1,400+ |
+Videographers · Video Editors · Thumbnail Artists · Scriptwriters · Cinematographers · Voiceover Artists
 
 ---
 
